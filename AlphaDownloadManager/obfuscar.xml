@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+PLANTILLA de Obfuscar
+Documentación completa en 
+https://docs.obfuscar.com/getting-started/configuration.html
+-->
+<Obfuscator>
+	<!-- CAMBIA RUTA donde están tus ensablados -->
+	<Var name="InPath" value=".\bin\Release\" />
+	<!-- CAMBIA RUTA donde quieres meter los ofuscados resultantes -->
+	<Var name="OutPath" value=".\bin\Release\Obfuscado\" />
+	<!-- CAMBIA RUTA Y NOMBRE de los ensamblados finales -->
+	<Module file="$(InPath)\AlphaDownloadManager.exe" />
+</Obfuscator>
+
