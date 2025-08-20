@@ -48,12 +48,11 @@ namespace AlphaDownloadManager
                                 lblSpeed.Text = $"Download Speed: {downloadSpeed:F2} KB/s";
                             }));
 
-                            // Atualizar progressBar de forma segura
+                           
                         }
 
                         stopwatch.Stop();
 
-                        // Verificação de integridade do arquivo
                         if (totalBytes != -1 && downloadedBytes != totalBytes)
                         {
                             throw new Exception("O tamanho do arquivo baixado não corresponde ao tamanho esperado.");
@@ -79,7 +78,7 @@ namespace AlphaDownloadManager
                 if (folderDialog.ShowDialog() == DialogResult.OK)
                 {
                     string downloadFolderPath = folderDialog.SelectedPath;
-                    string txtFileUrl = "https://cdn.cfalphagaming.com/files.txt"; // URL do arquivo .txt com os links
+                    string txtFileUrl = "https://cdn.cfalphagaming.com/files.txt";
 
                     try
                     {
@@ -104,13 +103,11 @@ namespace AlphaDownloadManager
                             {
                                 await DownloadFileAsync(fileUrl, filePath);
 
-                                // Atualizar a barra de progresso após cada arquivo baixado
                                 progressBar.Value++;
                             }
                             catch (Exception ex)
                             {
                                 MessageBox.Show($"Erro ao baixar o arquivo: {fileName}\n\n{ex.Message}", "Erro de Download", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                // Continuar o loop para tentar baixar os próximos arquivos
                             }
                         }
 
